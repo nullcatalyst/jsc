@@ -68,6 +68,8 @@ namespace jsc {
         void set(unsigned int index, const Object &value);
 
         Value operator () (unsigned int argCount, Value arguments[]);
+
+        String toString() const;
     };
 }
 

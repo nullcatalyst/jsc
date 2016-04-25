@@ -56,7 +56,7 @@ using namespace jsc;
     array["length"] = 2;
     XCTAssertTrue(array["length"].isNumber(), "[0, 1].length should be a number");
     XCTAssertEqual(array["length"].toNumber(), 2, "[0, 1].length should be equal to 1");
-    XCTAssertTrue(result.toString() == String("0,1"), "js([0, 1].toString()) should be equal to cpp('0,1')");
+    XCTAssertTrue(array.toString() == String("0,1"), "js([0, 1].toString()) should be equal to cpp('0,1')");
 }
 
 - (void) testException {

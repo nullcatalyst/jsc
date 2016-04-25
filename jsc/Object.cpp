@@ -97,3 +97,8 @@ jsc::Value jsc::Object::operator () (unsigned int argCount, Value arguments[]) {
 
     return Value(context, JSObjectCallAsFunction(context, object, nullptr, argCount, values, nullptr));
 }
+
+jsc::String jsc::Object::toString() const {
+    JSStringRef jsString = JSValueToStringCopy(context, object, nullptr);
+    return String(jsString);
+}
