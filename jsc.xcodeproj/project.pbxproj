@@ -9,7 +9,20 @@
 /* Begin PBXBuildFile section */
 		D2BA5B2D1CCDB38700C19592 /* jsc.h in Headers */ = {isa = PBXBuildFile; fileRef = D2BA5B2C1CCDB38700C19592 /* jsc.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D2BA5B341CCDB38700C19592 /* jsc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2BA5B291CCDB38700C19592 /* jsc.framework */; };
-		D2BA5B391CCDB38700C19592 /* jscTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D2BA5B381CCDB38700C19592 /* jscTests.m */; };
+		D2BA5B391CCDB38700C19592 /* jscTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = D2BA5B381CCDB38700C19592 /* jscTests.mm */; };
+		D2BA5B4D1CCDB39C00C19592 /* CFunction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D2BA5B431CCDB39C00C19592 /* CFunction.cpp */; };
+		D2BA5B4E1CCDB39C00C19592 /* CFunction.hpp in Headers */ = {isa = PBXBuildFile; fileRef = D2BA5B441CCDB39C00C19592 /* CFunction.hpp */; };
+		D2BA5B4F1CCDB39C00C19592 /* Context.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D2BA5B451CCDB39C00C19592 /* Context.cpp */; };
+		D2BA5B501CCDB39C00C19592 /* Context.hpp in Headers */ = {isa = PBXBuildFile; fileRef = D2BA5B461CCDB39C00C19592 /* Context.hpp */; };
+		D2BA5B511CCDB39C00C19592 /* Object.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D2BA5B471CCDB39C00C19592 /* Object.cpp */; };
+		D2BA5B521CCDB39C00C19592 /* Object.hpp in Headers */ = {isa = PBXBuildFile; fileRef = D2BA5B481CCDB39C00C19592 /* Object.hpp */; };
+		D2BA5B531CCDB39C00C19592 /* String.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D2BA5B491CCDB39C00C19592 /* String.cpp */; };
+		D2BA5B541CCDB39C00C19592 /* String.hpp in Headers */ = {isa = PBXBuildFile; fileRef = D2BA5B4A1CCDB39C00C19592 /* String.hpp */; };
+		D2BA5B551CCDB39C00C19592 /* Value.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D2BA5B4B1CCDB39C00C19592 /* Value.cpp */; };
+		D2BA5B561CCDB39C00C19592 /* Value.hpp in Headers */ = {isa = PBXBuildFile; fileRef = D2BA5B4C1CCDB39C00C19592 /* Value.hpp */; };
+		D2BA5B741CCDB5BE00C19592 /* file.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D2BA5B721CCDB5BE00C19592 /* file.cpp */; };
+		D2BA5B751CCDB5BE00C19592 /* file.hpp in Headers */ = {isa = PBXBuildFile; fileRef = D2BA5B731CCDB5BE00C19592 /* file.hpp */; };
+		D2BA5B771CCDB61400C19592 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2BA5B761CCDB61400C19592 /* JavaScriptCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,8 +40,21 @@
 		D2BA5B2C1CCDB38700C19592 /* jsc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = jsc.h; sourceTree = "<group>"; };
 		D2BA5B2E1CCDB38700C19592 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2BA5B331CCDB38700C19592 /* jscTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = jscTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D2BA5B381CCDB38700C19592 /* jscTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = jscTests.m; sourceTree = "<group>"; };
+		D2BA5B381CCDB38700C19592 /* jscTests.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = jscTests.mm; sourceTree = "<group>"; };
 		D2BA5B3A1CCDB38700C19592 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D2BA5B431CCDB39C00C19592 /* CFunction.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CFunction.cpp; sourceTree = "<group>"; };
+		D2BA5B441CCDB39C00C19592 /* CFunction.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CFunction.hpp; sourceTree = "<group>"; };
+		D2BA5B451CCDB39C00C19592 /* Context.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Context.cpp; sourceTree = "<group>"; };
+		D2BA5B461CCDB39C00C19592 /* Context.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Context.hpp; sourceTree = "<group>"; };
+		D2BA5B471CCDB39C00C19592 /* Object.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Object.cpp; sourceTree = "<group>"; };
+		D2BA5B481CCDB39C00C19592 /* Object.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Object.hpp; sourceTree = "<group>"; };
+		D2BA5B491CCDB39C00C19592 /* String.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = String.cpp; sourceTree = "<group>"; };
+		D2BA5B4A1CCDB39C00C19592 /* String.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = String.hpp; sourceTree = "<group>"; };
+		D2BA5B4B1CCDB39C00C19592 /* Value.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Value.cpp; sourceTree = "<group>"; };
+		D2BA5B4C1CCDB39C00C19592 /* Value.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Value.hpp; sourceTree = "<group>"; };
+		D2BA5B721CCDB5BE00C19592 /* file.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = file.cpp; sourceTree = "<group>"; };
+		D2BA5B731CCDB5BE00C19592 /* file.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = file.hpp; sourceTree = "<group>"; };
+		D2BA5B761CCDB61400C19592 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2BA5B771CCDB61400C19592 /* JavaScriptCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +83,7 @@
 				D2BA5B2B1CCDB38700C19592 /* jsc */,
 				D2BA5B371CCDB38700C19592 /* jscTests */,
 				D2BA5B2A1CCDB38700C19592 /* Products */,
+				D2BA5B761CCDB61400C19592 /* JavaScriptCore.framework */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,8 +99,19 @@
 		D2BA5B2B1CCDB38700C19592 /* jsc */ = {
 			isa = PBXGroup;
 			children = (
+				D2BA5B711CCDB5A700C19592 /* _private */,
 				D2BA5B2C1CCDB38700C19592 /* jsc.h */,
 				D2BA5B2E1CCDB38700C19592 /* Info.plist */,
+				D2BA5B461CCDB39C00C19592 /* Context.hpp */,
+				D2BA5B451CCDB39C00C19592 /* Context.cpp */,
+				D2BA5B4C1CCDB39C00C19592 /* Value.hpp */,
+				D2BA5B4B1CCDB39C00C19592 /* Value.cpp */,
+				D2BA5B4A1CCDB39C00C19592 /* String.hpp */,
+				D2BA5B491CCDB39C00C19592 /* String.cpp */,
+				D2BA5B481CCDB39C00C19592 /* Object.hpp */,
+				D2BA5B471CCDB39C00C19592 /* Object.cpp */,
+				D2BA5B441CCDB39C00C19592 /* CFunction.hpp */,
+				D2BA5B431CCDB39C00C19592 /* CFunction.cpp */,
 			);
 			path = jsc;
 			sourceTree = "<group>";
@@ -80,10 +119,19 @@
 		D2BA5B371CCDB38700C19592 /* jscTests */ = {
 			isa = PBXGroup;
 			children = (
-				D2BA5B381CCDB38700C19592 /* jscTests.m */,
+				D2BA5B381CCDB38700C19592 /* jscTests.mm */,
 				D2BA5B3A1CCDB38700C19592 /* Info.plist */,
 			);
 			path = jscTests;
+			sourceTree = "<group>";
+		};
+		D2BA5B711CCDB5A700C19592 /* _private */ = {
+			isa = PBXGroup;
+			children = (
+				D2BA5B731CCDB5BE00C19592 /* file.hpp */,
+				D2BA5B721CCDB5BE00C19592 /* file.cpp */,
+			);
+			path = _private;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -93,7 +141,13 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2BA5B501CCDB39C00C19592 /* Context.hpp in Headers */,
+				D2BA5B4E1CCDB39C00C19592 /* CFunction.hpp in Headers */,
+				D2BA5B561CCDB39C00C19592 /* Value.hpp in Headers */,
+				D2BA5B541CCDB39C00C19592 /* String.hpp in Headers */,
+				D2BA5B751CCDB5BE00C19592 /* file.hpp in Headers */,
 				D2BA5B2D1CCDB38700C19592 /* jsc.h in Headers */,
+				D2BA5B521CCDB39C00C19592 /* Object.hpp in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,6 +247,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2BA5B4D1CCDB39C00C19592 /* CFunction.cpp in Sources */,
+				D2BA5B4F1CCDB39C00C19592 /* Context.cpp in Sources */,
+				D2BA5B531CCDB39C00C19592 /* String.cpp in Sources */,
+				D2BA5B551CCDB39C00C19592 /* Value.cpp in Sources */,
+				D2BA5B511CCDB39C00C19592 /* Object.cpp in Sources */,
+				D2BA5B741CCDB5BE00C19592 /* file.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,7 +260,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D2BA5B391CCDB38700C19592 /* jscTests.m in Sources */,
+				D2BA5B391CCDB38700C19592 /* jscTests.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
