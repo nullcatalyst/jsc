@@ -10,6 +10,7 @@
 
 #include "Value.hpp"
 #include "Context.hpp"
+#include "Property.hpp"
 #include "CFunction.hpp"
 
 jsc::Object::Object(Context &context) : context(context) {
@@ -30,6 +31,21 @@ jsc::Object::~Object() {
     JSValueUnprotect(context, object);
 }
 
+jsc::StringProperty jsc::Object::operator [] (const String &property) {
+    JSValueRef propertyValue = JSObjectGetProperty(context, object, property, nullptr);
+
+    if (propertyValue != nullptr) {
+        return StringProperty(*this, property, propertyValue);
+    }
+
+    // Failed to retrieve the property, return undefined
+    return StringProperty(*this, property);
+}
+
+const jsc::Value jsc::Object::operator [] (const String &property) const {
+    return get(property);
+}
+
 const jsc::Value jsc::Object::get(const String &property) const {
     JSValueRef propertyValue = JSObjectGetProperty(context, object, property, nullptr);
 
@@ -47,6 +63,10 @@ void jsc::Object::set(const String &property, const Value &value, PropertyAttrib
 
 void jsc::Object::set(const String &property, const Object &value, PropertyAttributes attributes) {
     JSObjectSetProperty(context, object, property, value, static_cast<JSPropertyAttributes>(attributes), nullptr);
+}
+
+const jsc::Value jsc::Object::operator [] (unsigned int index) const {
+    return get(index);
 }
 
 const jsc::Value jsc::Object::get(unsigned int index) const {

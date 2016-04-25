@@ -27,4 +27,5 @@ FOUNDATION_EXPORT const unsigned char jscVersionString[];
 #include "Value.hpp"
 #include "String.hpp"
 #include "Object.hpp"
+#include "Property.hpp"
 #include "CFunction.hpp"

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D2500F1A1CCDCA32003A0BBF /* Property.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D2500F181CCDCA32003A0BBF /* Property.cpp */; };
+		D2500F1B1CCDCA32003A0BBF /* Property.hpp in Headers */ = {isa = PBXBuildFile; fileRef = D2500F191CCDCA32003A0BBF /* Property.hpp */; };
 		D2BA5B2D1CCDB38700C19592 /* jsc.h in Headers */ = {isa = PBXBuildFile; fileRef = D2BA5B2C1CCDB38700C19592 /* jsc.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D2BA5B341CCDB38700C19592 /* jsc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2BA5B291CCDB38700C19592 /* jsc.framework */; };
 		D2BA5B391CCDB38700C19592 /* jscTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = D2BA5B381CCDB38700C19592 /* jscTests.mm */; };
@@ -36,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D2500F181CCDCA32003A0BBF /* Property.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Property.cpp; sourceTree = "<group>"; };
+		D2500F191CCDCA32003A0BBF /* Property.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Property.hpp; sourceTree = "<group>"; };
 		D2BA5B291CCDB38700C19592 /* jsc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = jsc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2BA5B2C1CCDB38700C19592 /* jsc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = jsc.h; sourceTree = "<group>"; };
 		D2BA5B2E1CCDB38700C19592 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -108,6 +112,8 @@
 				D2BA5B4B1CCDB39C00C19592 /* Value.cpp */,
 				D2BA5B4A1CCDB39C00C19592 /* String.hpp */,
 				D2BA5B491CCDB39C00C19592 /* String.cpp */,
+				D2500F191CCDCA32003A0BBF /* Property.hpp */,
+				D2500F181CCDCA32003A0BBF /* Property.cpp */,
 				D2BA5B481CCDB39C00C19592 /* Object.hpp */,
 				D2BA5B471CCDB39C00C19592 /* Object.cpp */,
 				D2BA5B441CCDB39C00C19592 /* CFunction.hpp */,
@@ -148,6 +154,7 @@
 				D2BA5B751CCDB5BE00C19592 /* file.hpp in Headers */,
 				D2BA5B2D1CCDB38700C19592 /* jsc.h in Headers */,
 				D2BA5B521CCDB39C00C19592 /* Object.hpp in Headers */,
+				D2500F1B1CCDCA32003A0BBF /* Property.hpp in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,6 +258,7 @@
 				D2BA5B4F1CCDB39C00C19592 /* Context.cpp in Sources */,
 				D2BA5B531CCDB39C00C19592 /* String.cpp in Sources */,
 				D2BA5B551CCDB39C00C19592 /* Value.cpp in Sources */,
+				D2500F1A1CCDCA32003A0BBF /* Property.cpp in Sources */,
 				D2BA5B511CCDB39C00C19592 /* Object.cpp in Sources */,
 				D2BA5B741CCDB5BE00C19592 /* file.cpp in Sources */,
 			);
@@ -439,6 +447,7 @@
 				D2BA5B3F1CCDB38700C19592 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D2BA5B401CCDB38700C19592 /* Build configuration list for PBXNativeTarget "jscTests" */ = {
 			isa = XCConfigurationList;
@@ -447,6 +456,7 @@
 				D2BA5B421CCDB38700C19592 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

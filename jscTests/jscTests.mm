@@ -30,14 +30,33 @@ using namespace jsc;
 - (void) testResult {
     // Check that the return value is the last statement executed
     Context ctx;
-    
+
     Value result = ctx.eval("5");
     XCTAssertTrue(result.isNumber(), "5 should be a number");
-    XCTAssertTrue(result.toNumber() == 5, "js(5) == cpp(5)");
+    XCTAssertEqual(result.toNumber(), 5, "js(5) == cpp(5)");
 
     result = ctx.eval("5; false");
     XCTAssertTrue(result.isBoolean(), "false should be a boolean");
-    XCTAssertTrue(result.toBoolean() == false, "js(false) should be equal to cpp(false)");
+    XCTAssertEqual(result.toBoolean(), false, "js(false) should be equal to cpp(false)");
+}
+
+- (void) testArray {
+    // Check that the return value is the last statement executed
+    Context ctx;
+
+    Value result = ctx.eval("[0, 1, 2]");
+    XCTAssertTrue(result.isObject(), "[0, 1, 2] should be an object");
+    XCTAssertTrue(result.isArray(), "[0, 1, 2] should be an array");
+
+    Object array = result.toObject();
+    XCTAssertTrue(array["length"].isNumber(), "[0, 1, 2].length should be a number");
+    XCTAssertEqual(array["length"].toNumber(), 3, "[0, 1, 2].length should be equal to 3");
+
+    // Manually set the length of the array
+    array["length"] = 2;
+    XCTAssertTrue(array["length"].isNumber(), "[0, 1].length should be a number");
+    XCTAssertEqual(array["length"].toNumber(), 2, "[0, 1].length should be equal to 1");
+    XCTAssertTrue(result.toString() == String("0,1"), "js([0, 1].toString()) should be equal to cpp('0,1')");
 }
 
 - (void) testException {

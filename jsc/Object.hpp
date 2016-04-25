@@ -15,6 +15,8 @@ namespace jsc {
     class Context;
     class Object;
     class Value;
+    class StringProperty;
+    class IndexProperty;
 
     using Callback = Value (Context &context, Object &thisObject, unsigned int argCount, Value arguments[]);
 
@@ -36,6 +38,8 @@ namespace jsc {
         friend class String;
         friend class Value;
         friend class Context;
+        friend class StringProperty;
+        friend class IndexProperty;
 
         operator JSObjectRef () const {
             return object;
@@ -49,9 +53,15 @@ namespace jsc {
 
         ~Object();
 
+        StringProperty operator [] (const String &property);
+        const Value operator [] (const String &property) const;
+
         const Value get(const String &property) const;
         void set(const String &property, const Value &value, PropertyAttributes attributes = None);
         void set(const String &property, const Object &value, PropertyAttributes attributes = None);
+
+        IndexProperty operator [] (unsigned int index);
+        const Value operator [] (unsigned int index) const;
 
         const Value get(unsigned int index) const;
         void set(unsigned int index, const Value &value);
