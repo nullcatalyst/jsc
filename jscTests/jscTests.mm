@@ -59,6 +59,29 @@ using namespace jsc;
     XCTAssertTrue(array.toString() == String("0,1"), "js([0, 1].toString()) should be equal to cpp('0,1')");
 }
 
+- (void) testFunction {
+    // Test that the javascript function can be called from C++
+    Context ctx;
+    Value thrownValue(ctx);
+    bool wasThrown = false;
+
+    ctx.setExceptionHandler([&wasThrown, &thrownValue] (const Value exception) {
+        wasThrown = true;
+        thrownValue = exception;
+    });
+
+    // NOTE: functions are not executed in the same way as normal expressions
+    // They are determined first and are brought to the top of their declared scope
+    // So... Although the following line looks valid, no actual expression is executed, which means no actual value is returned
+    //>> Value result = ctx.eval("function test(x) {return x + 1;}");
+
+    Value result = ctx.eval("function test(x) {return x + 1;}; test");
+    XCTAssertTrue(result.isFunction(), "The result should be a function");
+
+    Object function = result.toObject();
+    XCTAssertTrue(function(1, (Value[]) { Value(ctx, 5) }).toNumber() == 6, "Calling the function, test(5), should return 6");
+}
+
 - (void) testException {
     // Test that the exception handler is correctly getting called with the right value
     Context ctx;

@@ -24,6 +24,11 @@ jsc::Value::Value(Context &context, bool boolean) : context(context) {
     JSValueProtect(context, value);
 }
 
+jsc::Value::Value(Context &context, int number) : context(context) {
+    value = JSValueMakeNumber(context, number);
+    JSValueProtect(context, value);
+}
+
 jsc::Value::Value(Context &context, double number) : context(context) {
     value = JSValueMakeNumber(context, number);
     JSValueProtect(context, value);
@@ -36,6 +41,11 @@ jsc::Value::Value(Context &context, const String &string) : context(context) {
 
 jsc::Value::Value(Context &context, const Object &object) : context(context) {
     value = object;
+    JSValueProtect(context, value);
+}
+
+jsc::Value::Value(const Value &other) : context(other.context) {
+    value = other.value;
     JSValueProtect(context, value);
 }
 
@@ -70,6 +80,7 @@ bool jsc::Value::isNumber()    const {return JSValueIsNumber(context, value);}
 bool jsc::Value::isString()    const {return JSValueIsString(context, value);}
 bool jsc::Value::isObject()    const {return JSValueIsObject(context, value);}
 bool jsc::Value::isArray()     const {return JSValueIsArray(context, value);}
+bool jsc::Value::isFunction()  const {return JSValueIsObject(context, value) && JSObjectIsFunction(context, const_cast<JSObjectRef>(value));}
 
 bool jsc::Value::toBoolean()   const {return JSValueToBoolean(context, value);}
 double jsc::Value::toNumber()  const {return JSValueToNumber(context, value, nullptr);}

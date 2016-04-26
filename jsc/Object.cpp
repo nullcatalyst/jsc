@@ -28,7 +28,9 @@ jsc::Object::Object(Context &context, std::function<Callback> callback) : contex
 }
 
 jsc::Object::~Object() {
-    JSValueUnprotect(context, object);
+    if (object != nullptr) {
+        JSValueUnprotect(context, object);
+    }
 }
 
 jsc::StringProperty jsc::Object::operator [] (const String &property) {
@@ -95,10 +97,16 @@ jsc::Value jsc::Object::operator () (unsigned int argCount, Value arguments[]) {
         values[i] = arguments[i];
     }
 
-    return Value(context, JSObjectCallAsFunction(context, object, nullptr, argCount, values, nullptr));
+    JSValueRef result = JSObjectCallAsFunction(context, object, nullptr, argCount, values, nullptr);
+    return Value(context, result);
 }
 
 jsc::String jsc::Object::toString() const {
     JSStringRef jsString = JSValueToStringCopy(context, object, nullptr);
+    return String(jsString);
+}
+
+jsc::String jsc::Object::toJSON(bool prettyPrint) const {
+    JSStringRef jsString = JSValueCreateJSONString(context, object, prettyPrint ? 4 : 0, nullptr);
     return String(jsString);
 }

@@ -20,7 +20,7 @@ namespace jsc {
 
     using Callback = Value (Context &context, Object &thisObject, unsigned int argCount, Value arguments[]);
 
-    enum PropertyAttributes {
+    enum PropertyAttributes : unsigned int {
         None         = kJSPropertyAttributeNone,
         ReadOnly     = kJSPropertyAttributeReadOnly,
         DontEnum     = kJSPropertyAttributeDontEnum,
@@ -53,6 +53,7 @@ namespace jsc {
 
         ~Object();
 
+        // String property accessors
         StringProperty operator [] (const String &property);
         const Value operator [] (const String &property) const;
 
@@ -60,6 +61,7 @@ namespace jsc {
         void set(const String &property, const Value &value, PropertyAttributes attributes = None);
         void set(const String &property, const Object &value, PropertyAttributes attributes = None);
 
+        // Indexed array accessors
         IndexProperty operator [] (unsigned int index);
         const Value operator [] (unsigned int index) const;
 
@@ -67,9 +69,12 @@ namespace jsc {
         void set(unsigned int index, const Value &value);
         void set(unsigned int index, const Object &value);
 
+        // Call the object as a function
         Value operator () (unsigned int argCount, Value arguments[]);
 
+        // Convert the object into a more human-readable format
         String toString() const;
+        String toJSON(bool prettyPrint = false) const;
     };
 }
 

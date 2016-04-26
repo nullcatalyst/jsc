@@ -33,11 +33,13 @@ namespace jsc {
     public:
         Value(Context &context);
         Value(Context &context, bool boolean);
+        Value(Context &context, int number);
         Value(Context &context, double number);
         Value(Context &context, const String &string);
         Value(Context &context, const Object &object);
 
         Value(Context &context, JSValueRef value);
+        Value(const Value &other);
 
         ~Value();
 
@@ -50,6 +52,7 @@ namespace jsc {
         bool isString() const;
         bool isObject() const;
         bool isArray() const;
+        bool isFunction() const;
 
         bool toBoolean() const;
         double toNumber() const;
